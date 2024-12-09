@@ -1,6 +1,7 @@
-# store-admin
 
-This is a Vue.js app that simulates a store admin portal where users can manually process orders, and manage products. It is meant to be used in conjunction with the product-service and makeline-service.
+# BestBuy Employee Application
+
+This is a Vue.js app designed for the Best Buy management portal. It allows employees to process orders manually, manage product inventory, and monitor the order pipeline. It integrates with the **Product Service** and **Makeline Service**.
 
 ## Running the app locally
 
@@ -14,28 +15,27 @@ This is a Vue.js app that simulates a store admin portal where users can manuall
 - [Azure OpenAI API Key](https://azure.microsoft.com/products/cognitive-services/openai-service/)
 
 ### Running the app
-To run the necessary services, clone the repo, open a terminal, and navigate to the repo directory.
 
-If you have access to OpenAI or Azure OpenAI, open the `docker-compose.yml` file, uncomment the `ai-services` block, and add your OpenAI or Azure OpenAI credentials.
+To set up the necessary services, clone the repository, open a terminal, and navigate to the project directory.
 
-> IMPORTANT: When filling in the values, do not put the value in double-quotes.
+If you plan to use OpenAI or Azure OpenAI, open the `docker-compose.yml` file, uncomment the `ai-service` block, and add your credentials.
 
 ```yaml
 environment:
-  - USE_AZURE_OPENAI=True # set to False if you are not using Azure OpenAI
-  - AZURE_OPENAI_DEPLOYMENT_NAME= # required if using Azure OpenAI
-  - AZURE_OPENAI_ENDPOINT= # required if using Azure OpenAI
-  - OPENAI_API_KEY= # always required
-  - OPENAI_ORG_ID= # required if using OpenAI
+  - USE_AZURE_OPENAI=True # Set to False if not using Azure OpenAI
+  - AZURE_OPENAI_DEPLOYMENT_NAME= # Required if using Azure OpenAI
+  - AZURE_OPENAI_ENDPOINT= # Required if using Azure OpenAI
+  - OPENAI_API_KEY= # Always required
+  - OPENAI_ORG_ID= # Required if using OpenAI
 ```
 
-Then run the following command:
+Run the following command:
 
 ```bash
 docker compose up
 ```
 
-With the services running, open a new terminal and navigate to the `store-admin` directory. Then run the following commands:
+Then, in a new terminal, navigate to the `BestBuy-Employee` directory and run:
 
 ```bash
 export VUE_APP_PRODUCT_SERVICE_URL=http://localhost:3002/
@@ -45,15 +45,13 @@ npm install
 npm run serve
 ```
 
-When the app is running, you should see output similar to the following:
+When the app is running, you'll see:
 
 ```text
   App running at:
   - Local:   http://localhost:8081/ 
   - Network: http://192.168.0.144:8081/
-
-  Note that the development build is not optimized.
-  To create a production build, run npm run build.
 ```
 
-Open a browser and navigate to `http://localhost:8081/`. You should see the store admin app running.# BestBuy-Employee
+Navigate to `http://localhost:8081/` in your browser to see the Store Admin app.
+    
